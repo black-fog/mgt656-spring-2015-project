@@ -23,4 +23,7 @@ app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
 
+// put static content in public
+app.use(express.static('public'));
+
 module.exports = app;
