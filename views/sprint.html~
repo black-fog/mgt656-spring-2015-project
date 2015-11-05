@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <header>
+    <h1>{{ title }} FTW</h1>
+  </header>
+{% endblock %}
+
+{% block mainContent %}
+  <p>
+    Welcome to {{ title }}. {{tagline}}
+    <img id="logo" src="bf.png">
+  </p>
+  <p>
+    List of events:
+  </p>
+  <div style="border: 1px solid black">
+    {% include "fragments/events-list.html" %}
+  </div>
+  <p>
+    Check out the <a href="/about">About us</a> page
+    as well as the <a href="/events">Events</a> page.
+  </p>
+  <p>
+    <a id="new" href="/events/new">Create a new event</a>
+  </p>
+{% endblock %}
