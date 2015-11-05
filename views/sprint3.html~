@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <header>
+    <h1>Sprint Report 3</h1>
+  </header>
+{% endblock %}
+
+{% block mainContent %}
+  <p>
+    <img id="logo" src="bf.png">
+  </p>
+<ul>
+<li> Sprint Completed Stories </li>
+<li>Incorporation with Bootstrap (2)</li>
+<li>Skeleton Home Page Theme (Logo, background, fonts and etc.) (3)</li>
+<li>Skeleton Home Page Content (List with only titles) (4)</li>
+<li>Pages have footer that has a link to about page (3)</li>
+<li>Unordered list of events (7) </li> 
+<li>Host on heroku </li>
+</ul>
+
+<h1> Sprint 4 Backlog</h1>
+<ul>
+<li>About section (Information about our company (our names and pictures)) (5) </li>
+</ul>
+<h1> Progress </h1>
+During our third sprint, we were able to make significant progress with our project. 
+We finished incorporation with Bootstrap and completed the Home Page
+ with the requested components: logo, list with titles, and a footer
+ that contains a link to the “About” page. We are happy to report that
+ we were able to resolve our prior communication issues and have agreed
+ upon a plan for future project coordination. By the end of the meeting,
+ we successfully discussed project progress and created goals
+ for the next sprint. 
+For sprint 4, we plan on continuing to work through our Product Backlog
+. We plan on completing
+ items 1, 2, 3, and 4 by our next sprint. We believe that with our improved
+ communication and project processes in place, our coding and sprint reports 
+will flow more smoothly with increased understanding by all team members. We
+ are also happy to announce that our sprint reports, starting from
+ report #3, will be shown in our web page.
+ 
+<h1> Product Backlog </h1>
+<ul>
+<li> About section (Information about our company (our names and pictures)) (5)</li>
+<li>Create an event skeleton/framework/Page (4) </li>
+<li>Create a “create event” functionality section (7)</li>
+<li>RSVP for an event (7)</li>
+<li>API skeleton (3)</li>
+<li>API functionality (7)</li>
+</ul>
+
+{% endblock %}

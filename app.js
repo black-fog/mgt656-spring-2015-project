@@ -8,8 +8,8 @@ var configure = require('./config.js');
 var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
-
-
+var sprint3Controllers = require('./controllers/sprint3.js');
+console.log(sprint3Controllers.sprint3)
 // Create our express app
 var app = express();
 
@@ -22,6 +22,7 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/sprint3', sprint3Controllers.sprint3);
 
 // put static content in public
 app.use(express.static('public'));
