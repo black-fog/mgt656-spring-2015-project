@@ -60,32 +60,7 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-    /**
-       The image URL must begin with ‘http://’ or ‘https://’ and end with ‘.gif’ or ‘.png’.
-       The title must be less than 50 characters
-       The location must be less than 50 characters
-       The year must be 2015 or 2016
-       The month must be between 0 to 11, inclusive
-       The hour must be 0-23
-       The minute must be 0 or 30
-    */
-    
-  if (parseInt(request.body.minute) != 0 && parseInt(request.body.minute) != 30){
-      contextData.errors.push('Your minute must be either 0 or 30')
-  }
-  
-  if (parseInt(request.body.year) != 2016 && parseInt(request.body.year) != 2015){
-      contextData.errors.push('Your year must be 2015 or 2016')
-  }
-  if (isNaN(request.body.month) || parseInt(request.body.month) < 0 || parseInt(request.body.month) > 11){
-      contextData.errors.push('Your month must be an integer from 0 to 11')
-  }
-  if (isNaN(request.body.day) || parseInt(request.body.day) < 1 || parseInt(request.body.day) > 31){
-      contextData.errors.push('Your month must be an integer from 0 to 11')
-  }
-  if (isNaN(request.body.hour) || (parseInt(request.body.hour) != 0 && parseInt(request.body.hour)!= 30)){
-      contextData.errors.push('Your hour must be 0 or 30')
-  }
+
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -96,9 +71,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-      id = events.all.length.toString()
-      console.log(id)
-    response.redirect(302, '/events/' + id);
+    response.redirect('/events');
   }else{
     response.render('create-event.html', contextData);
   }

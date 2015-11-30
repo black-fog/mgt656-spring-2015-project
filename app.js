@@ -10,6 +10,7 @@ var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 var sprint3Controllers = require('./controllers/sprint3.js');
 var sprint4Controllers = require('./controllers/sprint4.js');
+
 console.log(sprint3Controllers.sprint3)
 // Create our express app
 var app = express();
