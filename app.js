@@ -10,6 +10,7 @@ var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 var sprint3Controllers = require('./controllers/sprint3.js');
 var sprint4Controllers = require('./controllers/sprint4.js');
+var sprint5Controllers = require('./controllers/sprint5.js');
 
 console.log(sprint3Controllers.sprint3)
 // Create our express app
@@ -26,6 +27,7 @@ app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
 app.get('/sprint3', sprint3Controllers.sprint3);
 app.get('/sprint4', sprint4Controllers.sprint4);
+app.get('/sprint5', sprint5Controllers.sprint5);
 
 // put static content in public
 app.use(express.static('public'));

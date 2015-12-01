@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+  </head>
+
+	<body class="container">
+
+    
+  <header>
+    <h1>Sprint Report 5</h1>
+    <h2> Black Fog Coding Team </h2>
+    <h6>William Cai (william.cai@yale.edu), 
+Can Esturk (can.esturk@yale.edu), 
+Jackson Feeny (jackson.feeny@yale.edu), 
+Heesun Lee (heesun.lee@yale.edu)</h6>
+    <h4> November 30, 2015 </h4>
+    
+  </header>
+
+
+    
+  <p>
+    <img src="sprint5.png">
+  </p>
+<h1> Sprint 5 Completed Stories </h1>
+<ul>
+  <li> 	Create an event skeleton/framework/page (3)</li>
+  <li> 	Create a “create event” functionality section (13)</li>	
+</ul>
+
+<h1> Sprint 5 Backlog</h1>
+<ul>
+<li>  Add Google Analytics code to each webpage and also complete traffic analysis (10) </li>
+<li>  RSVP for an event (8) </li>
+</ul>
+
+<h1> Progress </h1>
+During our fifth sprint, we completed two stories, the “create an event” skeleton page 
+as well as the “create an event” functionality. Due to stakeholder demand, we created 
+a new user story for Google Analytics and added it to our sprint backlog as well as waffle. 
+We will have the code and traffic analysis completed by Sprint 6. Another thing we noticed 
+during our Sprint 5 was that the code for event pages is currently showing an error, 
+even though it was working previously and the relevant code has not been touched. 
+It is possible that adding validation affected this portion of the site. We plan on 
+fixing this in time for the final sprint report. You can view our updated backlog at
+<a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__waffle.io_black-2Dfog_mgt656-2Dspring-2D2015-2Dproject&d=AwMG-g&c=-dg2m7zWuuDZ0MUcV7Sdqw&r=oNvwkC5vwqX1YQ6XD8epkawNxv4twJbkIOR5Kjcaqgs&m=uf0XUz5WpApSM2mnfInHnCnvYLpIcNwUO65PuXqwZKM&s=okmTZkI0102Q8S__CPCxMGEmsI70FT5SHfr1A4AEZhE&e="> here. </a>  
+<p></p>
+As of now, our application has an <a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__mgt656-2Dblack-2Dfog.herokuapp.com_about&d=AwMG-g&c=-dg2m7zWuuDZ0MUcV7Sdqw&r=oNvwkC5vwqX1YQ6XD8epkawNxv4twJbkIOR5Kjcaqgs&m=uf0XUz5WpApSM2mnfInHnCnvYLpIcNwUO65PuXqwZKM&s=AeiNmGZnw61p_ZSEHBDscnRVC2IX54q9Ilbx9ac4OXU&e=">about page</a>, 
+<a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__mgt656-2Dblack-2Dfog.herokuapp.com_events_new&d=AwMG-g&c=-dg2m7zWuuDZ0MUcV7Sdqw&r=oNvwkC5vwqX1YQ6XD8epkawNxv4twJbkIOR5Kjcaqgs&m=uf0XUz5WpApSM2mnfInHnCnvYLpIcNwUO65PuXqwZKM&s=o4uBiO4dk0qwKVLbL60Qa183eSnYYCg1Uw0Wclubv4A&e="> create a new event page</a>, 
+<a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__mgt656-2Dblack-2Dfog.herokuapp.com&d=AwMG-g&c=-dg2m7zWuuDZ0MUcV7Sdqw&r=oNvwkC5vwqX1YQ6XD8epkawNxv4twJbkIOR5Kjcaqgs&m=uf0XUz5WpApSM2mnfInHnCnvYLpIcNwUO65PuXqwZKM&s=mIl8oPN9kjaysBLmBVzcs6oQgP-kLWjrUKeZmh8BGnU&e=">home page </a> with our team logo, 
+header, and footer, list of events that show the name of the event, date, and number of attendees, 
+and the create an event functionality. You can see our application on 
+<a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__mgt656-2Dblack-2Dfog.herokuapp.com_&d=AwMG-g&c=-dg2m7zWuuDZ0MUcV7Sdqw&r=oNvwkC5vwqX1YQ6XD8epkawNxv4twJbkIOR5Kjcaqgs&m=uf0XUz5WpApSM2mnfInHnCnvYLpIcNwUO65PuXqwZKM&s=Rg-6ZHytu6-ud-pP6fReIcyG3AiFinQVerkXPy3vWPs&e="> here. </a>
+
+<p></p>
+For sprint 6, we plan on completing the rest of our product backlog and successfully passing all of the required tests. 
+<h1> Product Backlog </h1>
+<ul>
+<li>Google Analytics (10)</li>
+<li>RSVP for an event (8)</li>
+<li>Event detail page for events (5)</li>
+<li>API skeleton (3)</li>
+<li>API functionality (7)</li>
+</ul>
+
+
+
+    
+      <footer>
+      <a href="/about"> About </a>
+      <a href="/">Homepage </a> 
+      </footer>
+    
+
+  </body>
+</html>
