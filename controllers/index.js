@@ -10,7 +10,11 @@ function index (request, response) {
     'tagline': 'You are doomed (just kidding).',
     'events': events.all,
     'cur_time': new Date(),
+    'test': '0'  
   };
+    if (request.params['test'] == 'rsvp'){
+	contextData['test'] = '1'
+    }
   response.render('index.html', contextData);
 }
 

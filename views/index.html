@@ -15,7 +15,11 @@
     List of events:
   </p>
   <div style="border: 1px solid black">
+    {% if test == '0' %}
     {% include "fragments/events-list.html" %}
+    {% else %}
+    {% include "fragments/modified-events-list.html" %}
+    {% endif %}
   </div>
   <p>
     Check out the <a href="/about">About us</a> page
