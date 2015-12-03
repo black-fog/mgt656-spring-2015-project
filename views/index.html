@@ -1,24 +1,5 @@
 {% extends "layout.html" %}
 
-{% if test == '0' %}
-{% block tests %}
-<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='112850825-0',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-{% endblock %}
-{% endif %}
-
 
 {% block header %}
   <header>
@@ -37,11 +18,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     List of events:
   </p>
   <div style="border: 1px solid black">
-    {% if test == '0' %}
     {% include "fragments/events-list.html" %}
-    {% else %}
-    {% include "fragments/modified-events-list.html" %}
-    {% endif %}
   </div>
   <p>
     Check out the <a href="/about">About us</a> page
@@ -51,3 +28,31 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <a id="new" href="/events/new">Create a new event</a>
   </p>
 {% endblock %}
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="//www.google-analytics.com/cx/api.js?experiment=tJSHLCRRQxS5UBvO9qqDUA"></script>
+           
+<!-- Load the JQuery library -->                                     
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+                                                                     
+<script>                                                             
+// Define JavaScript for each page variation of this experiment.     
+var pageVariations = [                                               
+  function() {// do nothing
+},                                                                   
+  function() {    // Variation 1: Support!                           
+    $( 'li.event-title' ).prepend( 'RSVP ' );
+  }                                                                  
+];                                                                   
+                                                                     
+// Wait for the DOM to load, then execute the view for the chosen variation.
+$(document).ready(function(){                                        
+  // Ask Google Analytics which variation to show the user.          
+  var chosenVariation = cxApi.chooseVariation(tJSHLCRRQxS5UBvO9qqDUA);   
+                                                                     
+  // Execute the chosen view                                         
+  pageVariations[chosenVariation]();                                 
+}                                                                    
+);                                                                   
+</script>                                                            
+           
