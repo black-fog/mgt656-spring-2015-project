@@ -28,6 +28,17 @@ var allowedDateInfo = {
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
   ]
 };
+/**
+ * Controller that renders one event in HTML
+ */
+function getEvent(request, response) {
+  var currentTime = new Date();
+  var contextData = {
+    'event': events.getById(parseInt(request.params.slug)),
+    'cur_time': currentTime
+  };
+  response.render('one.html', contextData);
+}
 
 /**
  * Controller that renders a list of events in HTML.
@@ -36,7 +47,7 @@ function listEvents(request, response) {
   var currentTime = new Date();
   var contextData = {
     'events': events.all,
-    'time': currentTime
+    'cur_time': currentTime
   };
   response.render('event.html', contextData);
 }
@@ -83,12 +94,23 @@ function saveEvent(request, response){
   if (isNaN(request.body.day) || parseInt(request.body.day) < 1 || parseInt(request.body.day) > 31){
       contextData.errors.push('Your month must be an integer from 0 to 11')
   }
-  if (isNaN(request.body.hour) || (parseInt(request.body.hour) != 0 && parseInt(request.body.hour)!= 30)){
-      contextData.errors.push('Your hour must be 0 or 30')
+  if (isNaN(request.body.hour) || (parseInt(request.body.hour) <0 || parseInt(request.body.hour)> 23)){
+      contextData.errors.push('Your hour must be between 0 and 23 inclusive.')
   }
-
+  if (!validator.isURL(request.body.image)) { 
+      contextData.errors.push('Your image must be a URL')
+  }   
+    var image_url = request.body.image
+  if(!image_url.match(/^(.)+.png/i) && !image_url.match(/^(.)+.gif/i)){
+      contextData.errors.push('your image must be a gif or png')
+  }
+  if (validator.isLength(request.body.location, 1,50) === false) {
+      contextData.errors.push('your location is at most 50 chars')
+  }
   if (contextData.errors.length === 0) {
+      var id = events.all.length
     var newEvent = {
+	id: id,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -96,9 +118,10 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-      id = events.all.length.toString()
-      console.log(id)
-    response.redirect(302, '/events/' + id);
+      var contextData = {
+	  'event': newEvent
+      };
+      response.redirect('/events/' + id);
   }else{
     response.render('create-event.html', contextData);
   }
@@ -113,21 +136,23 @@ function eventDetail (request, response) {
 }
 
 function rsvp (request, response){
-  var ev = events.getById(parseInt(request.params.id));
+  var ev = events.getById(parseInt(request.params.slug));
   if (ev === null) {
     response.status(404).send('No such event');
   }
-
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && validator.normalizeEmail(request.body.email).match(/^(.*?)+yale.edu$/)){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
-    var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+  var contextData = {
+    'event': ev,
+      errors: []
+  };
+      contextData.errors.push('Invalid email');
+  response.render('one.html', contextData);
   }
-
 }
+
 
 /**
  * Export all our functions (controllers in this case, because they
@@ -135,6 +160,7 @@ function rsvp (request, response){
  */
 module.exports = {
   'listEvents': listEvents,
+  'getEvent': getEvent,
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,

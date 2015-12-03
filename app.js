@@ -25,6 +25,8 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/events/:slug', eventControllers.getEvent);
+app.post('/events/:slug', eventControllers.rsvp);
 app.get('/sprint3', sprint3Controllers.sprint3);
 app.get('/sprint4', sprint4Controllers.sprint4);
 app.get('/sprint5', sprint5Controllers.sprint5);
