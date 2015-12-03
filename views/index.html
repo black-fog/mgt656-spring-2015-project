@@ -1,4 +1,3 @@
-{% extends "layout.html" %}
 <!-- Load the Content Experiment JavaScript API client for the experiment -->
 <script src="//www.google-analytics.com/cx/api.js?experiment=e4CjdHskQ1itTyFpZV1juA"></script>
                   
@@ -16,7 +15,7 @@
 var pageVariations = [
   function() {},  // Original: Do nothing. This will render the default HTML.
   function() {    // Variation 1: With RSVP
-    document.getElementById('rsvp').text('RSVP')
+    document.getElementById('rsvp').text("RSVP to" + document.getElementById('rsvp').text);
   }                                             
 ];                                              
                                                 
@@ -26,6 +25,8 @@ $(document).ready(
   pageVariations[chosenVariation]               
 );                                              
 </script>         
+
+{% extends "layout.html" %}
 
 {% block header %}
   <header>
