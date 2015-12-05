@@ -32,10 +32,13 @@ var allowedDateInfo = {
  * Controller that renders one event in HTML
  */
 function getEvent(request, response) {
+    var chosenValue = Math.random() < 0.5 ? 0 : 1
   var currentTime = new Date();
   var contextData = {
     'event': events.getById(parseInt(request.params.slug)),
-    'cur_time': currentTime
+    'cur_time': currentTime,
+      'test': chosenValue
+      
   };
   response.render('one.html', contextData);
 }

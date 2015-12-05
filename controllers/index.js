@@ -12,9 +12,6 @@ function index (request, response) {
     'cur_time': new Date(),
     'test': '0'  
   };
-    if (request.params['test'] == 'rsvp'){
-	contextData['test'] = '1'
-    }
   response.render('index.html', contextData);
 }
 
