@@ -54,7 +54,24 @@ function getById (id) {
   return null;
 }
 
+/**
+ * Returns all events with search in the title
+ */
+function search (search) {
+  var running_list = [];
+  for (var i = allEvents.length - 1; i >= 0; i--) {
+    if (allEvents[i].title.indexOf(search) >= 0){
+	running_list.push(allEvents[i]);
+    }
+  }
+  if (running_list.length > 0){
+      return running_list;
+  }
+  return null;
+}
+
 module.exports = exports = {
   all: allEvents,
-  getById: getById
+  getById: getById,
+    search: search,
 };

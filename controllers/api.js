@@ -102,6 +102,19 @@ function rsvp (request, response){
 
 }
 
+function list(request, response){
+    var search = request.query.search;
+    if (search){
+	var evs = events.search(search)
+	var JSONObj = {"events": evs}; 
+	response.send(JSONObj);
+    } else{
+	var evs = events.all;
+	var JSONObj = {"events": evs};
+	response.send(JSONObj);
+    }
+}
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -111,5 +124,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'list': list,
 };

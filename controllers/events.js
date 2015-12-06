@@ -87,8 +87,7 @@ function saveEvent(request, response){
   if (parseInt(request.body.minute) != 0 && parseInt(request.body.minute) != 30){
       contextData.errors.push('Your minute must be either 0 or 30')
   }
-  
-  if (parseInt(request.body.year) != 2016 && parseInt(request.body.year) != 2015){
+  if ( (request.body.year % 1 !== 0) || (parseInt(request.body.year) != 2016 && parseInt(request.body.year) != 2015)){
       contextData.errors.push('Your year must be 2015 or 2016')
   }
   if (isNaN(request.body.month) || parseInt(request.body.month) < 0 || parseInt(request.body.month) > 11){
@@ -103,7 +102,7 @@ function saveEvent(request, response){
   if (!validator.isURL(request.body.image)) { 
       contextData.errors.push('Your image must be a URL')
   }   
-    var image_url = request.body.image
+  var image_url = request.body.image
   if(!image_url.match(/^(.)+.png/i) && !image_url.match(/^(.)+.gif/i)){
       contextData.errors.push('your image must be a gif or png')
   }
@@ -112,13 +111,13 @@ function saveEvent(request, response){
   }
   if (contextData.errors.length === 0) {
       var id = events.all.length
-    var newEvent = {
+      var newEvent = {
 	id: id,
-      title: request.body.title,
-      location: request.body.location,
-      image: request.body.image,
-      date: new Date(),
-      attending: []
+	title: request.body.title,
+	location: request.body.location,
+	image: request.body.image,
+	date: new Date(),
+	attending: []
     };
     events.all.push(newEvent);
       var contextData = {
