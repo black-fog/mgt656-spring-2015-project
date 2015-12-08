@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  
+
+
+
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+  </head>
+
+	<body class="container">
+
+    
+  <header>
+    <h1>Sprint Report 6</h1>
+    <h2> Black Fog Coding Team </h2>
+    <h6>William Cai (william.cai@yale.edu), 
+Can Esturk (can.esturk@yale.edu), 
+Jackson Feeny (jackson.feeny@yale.edu), 
+Heesun Lee (heesun.lee@yale.edu)</h6>
+    <h4> December 07, 2015 </h4>
+  </header>
+
+
+    
+  <p>
+    <img src="sprint6.png">
+  </p>
+<h1> Sprint 6 Completed Stories </h1>
+<ul>
+  <li> Add Google Analytics code to each webpage and also complete traffic analysis (10)</li>
+  <li> RSVP for an event (8)  </li> 
+  <li> Event detail page for events (5)</li> 
+  <li>API skeleton (3)</li> 
+  <li>API functionality (7)</li> 
+</ul>
+<h1> Sprint 6 Backlog</h1>
+<ul>
+<li> None </li>
+</ul>
+
+<h1> Progress </h1>
+During our sixth and last sprint, we were able to finish all of the stories 
+in our product backlog and pass all of the required tests. You can view our 
+updated backlog at <a href="https://waffle.io/black-fog/mgt656-spring-2015-project"> here. </a>
+<p></p>
+We had one scrum meeting in this week. Since that was our last sprint meeting, we started to discuss 
+the possibility of technical issues that could prevent us to complete the project before final report. 
+Our coders convinced us this would not be the case and they would be able to complete all of the stories 
+in the product backlog. Then we talked about the sprint 5 and why RSVP for event story placed in sprint backlog. 
+The common answer was time constraints. Then we talked about scrum master and her role in final sprint. Since sprint 6 
+is the most important sprint her role was so crucial to help the team finish all stories in line with agile/scrum principles. 
+She did very well in sprint 6 and team was able to complete all of the stories very fast and correct.
+<p></p>
+As of now there are no errors or bugs in our web page. It is fully functional: API and filtering mechanism to 
+block non Yale addresses was written, google analytics was implemented and users are able to RSVP. We generously 
+invite you to look at our <a href="http://mgt656-black-fog.herokuapp.com/">home page </a>. User can navigate wherever 
+she wants (create an event sections, events section and about page). Users are able to create a new event through our 
+<a href=" http://mgt656-black-fog.herokuapp.com/events/new "> create a new event page</a>.  
+They have to determine the title, location, associated image and specific date and time. Also they can see lists of events on 
+our home page or on our <a href="http://mgt656-black-fog.herokuapp.com/events">events page</a> and 
+when they click on the event they move to the  <a href=" http://mgt656-black-fog.herokuapp.com/events/0">event information page</a>. 
+Here they can see who will attend to the event or they can subscribe by submitting their Yale email address.
+<p></p>
+
+<h1> Product Backlog </h1>
+<ul>
+<li>All completed</li>
+</ul>
+
+
+
+    
+      <footer>
+      <a href="/about"> About </a>
+      <a href="/">Homepage </a> 
+      </footer>
+    
+      <script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-70962616-1', 'auto');
+	ga('require', 'linkid');
+	ga('send', 'pageview');
+
+      </script>
+  </body>
+</html>
