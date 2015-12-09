@@ -25,22 +25,23 @@
 </ul>
 {% endif %}
 
-<a href = "/thanks" class="donation"> ! </a>
+
+<a href="/thanks" class="donation"> ! </a>
 
 <!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="//www.google-analytics.com/cx/api.js?experiment=2rqxfw2VTbi2D4bZF-n-Cw"></script>
-            
+<script src="//www.google-analytics.com/cx/api.js?experiment=RDM85WOkRMKT2JUGys7WOQ"></script>
+
 <!-- Load the JQuery library -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
                                 
 <script>                        
 // Define JavaScript for each page variation of this experiment.
 var pageVariations = [                                          
-  function() {// do nothing                                     
-    $( 'a.donation' ).prepend( 'Support' );
+  function() {// support                      
+    $('a.donation').prepend('Support');
 },                                                              
-  function() {    // Variation 1: Support!                      
-    $( 'a.donation' ).prepend( 'Donate' );                         
+  function() {    // Variation 1: donate
+    $('a.donation').prepend('Donate');                         
   }                                                             
 ];                                                              
                                                                 
