@@ -7,7 +7,7 @@ var events = require('../models/events');
 function index (request, response) {
   var contextData = {
     'title': 'BlackFog',
-    'tagline': 'Prepare to find some awesome events..',
+    'tagline': 'Prepare to find some awesome events.',
     'events': events.all,
     'cur_time': new Date(),
     'test': '0'  

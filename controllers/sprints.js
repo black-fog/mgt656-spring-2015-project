@@ -2,6 +2,7 @@
 
 var events = require('../models/events');
 
+// Given an id, renders the sprint corresponding to it.  
 function getsprint(request, response) {
     var contextData = {
     };

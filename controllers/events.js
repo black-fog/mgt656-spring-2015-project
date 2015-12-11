@@ -71,7 +71,7 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-    /**
+  /** REQUIREMENTS:
        The image URL must begin with ‘http://’ or ‘https://’ and end with ‘.gif’ or ‘.png’.
        The title must be less than 50 characters
        The location must be less than 50 characters
@@ -79,7 +79,7 @@ function saveEvent(request, response){
        The month must be between 0 to 11, inclusive
        The hour must be 0-23
        The minute must be 0 or 30
-    */
+  */
     
   if (parseInt(request.body.minute) != 0 && parseInt(request.body.minute) != 30){
       contextData.errors.push('Your minute must be either 0 or 30')

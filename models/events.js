@@ -70,8 +70,11 @@ function search (search) {
   return null;
 }
 
+/**
+ * exports to other parts of the app. 
+ */
 module.exports = exports = {
   all: allEvents,
   getById: getById,
-    search: search,
+  search: search,
 };
